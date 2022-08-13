@@ -1,0 +1,40 @@
+{% block copyright_footer_detail %}
+    <sw-page>
+        {% block copyright_footer_detail_smart_bar_actions %}
+            <template #smart-bar-actions>
+                <sw-button :routerLink="{ name: 'copyright.footer.module.list' }">
+                    Cancel
+                </sw-button>
+
+                <sw-button-process
+                        :isLoading="isLoading"
+                        :processSuccess="processSuccess"
+                        variant="primary"
+                        @process-finish="saveFinish"
+                        @click="onClickSave">
+                    Save
+                </sw-button-process>
+            </template>
+        {% endblock %}
+        <template #content>
+            <sw-card-view v-if="form" :isLoading="isLoading">
+                <sw-card>
+                    <sw-colorpicker
+                        v-model="color"
+                        colorOutput="auto"
+                        :alpha="true"
+                        :disabled="false"
+                        :colorLabels="true"
+                        label="Text color"
+                    >
+                    </sw-colorpicker>
+                    <sw-field
+                        v-for="f in form"
+                        :label="f.name"
+                        v-model="f.value"
+                    ></sw-field>
+                </sw-card>
+            </sw-card-view>
+        </template>
+    </sw-page>
+{% endblock %}

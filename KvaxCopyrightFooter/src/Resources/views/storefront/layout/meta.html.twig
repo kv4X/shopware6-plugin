@@ -1,0 +1,9 @@
+{% sw_extends '@Storefront/storefront/layout/meta.html.twig' %}
+{% block layout_head_stylesheet %}
+    {{ parent() }}
+    <style>
+        .footer-copyright {
+            color: {{ context.extensions.copyRightTexts.config.color }};
+        }
+    </style>
+{% endblock %}

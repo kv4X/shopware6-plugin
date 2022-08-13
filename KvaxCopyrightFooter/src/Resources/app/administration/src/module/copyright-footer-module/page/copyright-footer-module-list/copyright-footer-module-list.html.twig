@@ -1,0 +1,33 @@
+{% block copyright_footer_list %}
+    <sw-page>
+        {% block copyright_footer_list_smart_bar_header %}
+            <template #smart-bar-header>
+                {% block copyright_footer_list_smart_bar_header_title %}
+                    <h2>
+                        {% block copyright_footer_list_smart_bar_header_title_text %}
+                            Copyright Footer
+                            <sw-icon name="small-arrow-medium-right" small></sw-icon>
+                            Sales Channels
+                        {% endblock %}
+                        {% block copyright_footer_list_smart_bar_header_amount %}
+                            <span v-if="total" class="sw-page__smart-bar-amount">
+                                ({{total}})
+                            </span>
+                        {% endblock %}
+                    </h2>
+                {% endblock %}
+            </template>
+        {% endblock %}
+
+        <template #content>
+            <sw-entity-listing
+                    :items="copyrightModuleCollection"
+                    :repository="repository"
+                    :showSelection="false"
+                    :columns="columns"
+                    detailRoute="copyright.footer.module.detail">
+                >
+            </sw-entity-listing>
+        </template>
+    </sw-page>
+{% endblock %}

@@ -1,0 +1,23 @@
+{
+  "name": "kvax/copyright-footer",
+  "description": "Modify shopware copyright",
+  "type": "shopware-platform-plugin",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Almir Kvakic - kvax"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Kvax\\KvaxCopyrightFooter\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "Kvax\\KvaxCopyrightFooter\\KvaxCopyrightFooter",
+    "label": {
+      "de-DE": "Modify footer copyright",
+      "en-GB": "Modify footer copyright"
+    }
+  }
+}
